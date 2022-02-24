@@ -117,6 +117,11 @@ namespace XMLParser
                 list.RemoveAt(list.Count - 1);
             }
 
+            if(currentState == State.FAMILY)
+            {
+                output += "    </family>\n";
+            }
+
             output += "  </person>\n";
         }
 
