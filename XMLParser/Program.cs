@@ -19,6 +19,9 @@ namespace XMLParser
             {
                 Console.WriteLine("Successfully parsed file!");
             }
+
+            Console.WriteLine("To exit press any key!");
+            Console.ReadKey();
         }
     }
 }
