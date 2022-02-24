@@ -6,7 +6,7 @@ namespace XMLParser
     {
         static void Main(string[] args)
         {
-            string filename = "../../../input.txt";
+            string filename = "input.txt";
 
             if (args.Length > 0)
             {
@@ -18,8 +18,6 @@ namespace XMLParser
             if (p.ParseFile(filename))
             {
                 Console.WriteLine("Successfully parsed file!");
-                Console.WriteLine("Press any key to quit!");
-                Console.ReadKey();
             }
         }
     }
