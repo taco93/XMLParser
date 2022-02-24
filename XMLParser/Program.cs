@@ -8,14 +8,20 @@ namespace XMLParser
         {
             string filename = "../../../input.txt";
 
-            if(args.Length > 0)
+            if (args.Length > 0)
             {
                 filename = args.First();
             }
 
             Parser p = new Parser();
 
-            p.ParseFile(filename);
+            if (p.ParseFile(filename))
+            {
+                Console.WriteLine("Successfully parsed file!");
+                Console.WriteLine("Press any key to quit!");
+                Console.ReadKey();
+            }
+
         }
     }
 }

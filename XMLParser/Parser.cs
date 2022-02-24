@@ -15,13 +15,13 @@ namespace XMLParser
     {
         private State currentState = State.PERSON;
 
-        public void ParseFile(string filepath)
+        public bool ParseFile(string filepath)
         {
             if (!File.Exists(filepath))
             {
                 Console.WriteLine("No file at given filepath!");
 
-                return;
+                return false;
             }
 
             List<string> list = File.ReadAllLines(filepath).ToList();
@@ -41,6 +41,8 @@ namespace XMLParser
             output += "</people>";
 
             File.WriteAllText("output.txt", output);
+
+            return true;
         }
 
         public void AddPerson(ref string[] data, ref string output)
