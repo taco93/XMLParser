@@ -20,6 +20,7 @@ namespace XMLParser
             if (!File.Exists(filepath))
             {
                 Console.WriteLine("No file at given filepath!");
+                Console.ReadKey();
 
                 return false;
             }
