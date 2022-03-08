@@ -10,18 +10,12 @@ namespace XMLParser
 
             if (args.Length > 0)
             {
-                filename = args.First();
+                filename = args[0];
             }
 
-            Parser p = new Parser();
+            Parser p = new Parser(ParseType.XML);
 
-            if (p.ParseFile(filename))
-            {
-                Console.WriteLine("Successfully parsed file!");
-            }
-
-            Console.WriteLine("To exit press any key!");
-            Console.ReadKey();
+            p.Parse(filename);
         }
     }
 }
