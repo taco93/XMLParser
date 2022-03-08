@@ -1,0 +1,15 @@
+P|Carl Gustaf|Bernadotte
+T|042-143416|0709248916
+A|Drottningholms slott|Stockholm|10001
+F|Victoria|1977
+A|Haga Slott|Stockholm|1000
+A|AnotherOne|StockHolm|1001
+F|Carl Philip|1979
+T|0768-101802|08-101802
+P|Barack|Obama
+A|1600 Pennsylvania Avenue|Washington, D.C
+T|1342131|123123
+P|Daniel|Lagula
+A|Godisland|Candyland
+T|999-999999|031221312
+F|John|2
