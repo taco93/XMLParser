@@ -48,10 +48,14 @@ namespace XMLParser
 
                     string[] parts = line.Split('|', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
 
-                    // Avoid blankspaces
+                    // Avoid blankspaces and empty data as input
                     if (parts.Length == 0)
                     {
                         continue;
+                    }
+                    else if(parts.Length == 1)
+                    {
+                        throw new Exception("Invalid input: '" + parts[0] + "' doesnt contain any data.");
                     }
 
                     string command = parts[0];

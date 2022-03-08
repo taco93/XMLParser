@@ -45,7 +45,7 @@ namespace XMLParser
             }
             else
             {
-                p.FamilyMember.Phone = phone;
+                p.Family.CurrentMember.Phone = phone;
             }
         }
 
@@ -66,7 +66,7 @@ namespace XMLParser
             }
             else
             {
-                p.FamilyMember.Address = a;
+                p.Family.CurrentMember.Address = a;
             }
         }
 
@@ -79,7 +79,12 @@ namespace XMLParser
                 throw new Exception("Invalid input: Family doesn't belong to an object");
             }
 
-            p.AddFamilyMember(parts);
+            if(p.Family == null)
+            {
+                p.Family = new Family();
+            }
+
+            p.Family.Add(parts);
         }
 
         public override string ToString()

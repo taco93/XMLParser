@@ -11,7 +11,7 @@ namespace XMLParser
         string _firstname, _lastname;
         private Phone? _phone;
         private Address? _address;
-        private List<FamilyMember>? _family;
+        private Family? _family;
 
         public Person(string[] parts)
         {
@@ -28,19 +28,9 @@ namespace XMLParser
             }
             catch (Exception ex)
             {
-                // Empty for now
+                // Might be redundant to throw when you catch an exception. This is to make the exception more clear
+                throw new Exception("Invalid input: Person requires first and a last name!");
             }
-        }
-
-        public void AddFamilyMember(string[] parts)
-        {
-            if (_family == null)
-            {
-                _family = new List<FamilyMember>();
-            }
-
-            FamilyMember fm = new FamilyMember(parts);
-            _family.Add(fm);
         }
 
         public Phone? Phone
@@ -55,14 +45,10 @@ namespace XMLParser
             set => _address = value;
         }
 
-        public List<FamilyMember>? Family
+        public Family? Family
         {
             get => _family;
-        }
-
-        public FamilyMember? FamilyMember
-        {
-            get => (_family != null && _family.Count > 0) ? _family.Last() : null;
+            set => _family = value;
         }
 
         public override string ToString()
@@ -83,13 +69,9 @@ namespace XMLParser
                 str += _address.ToString();
             }
 
-            // Check so the person has a family
             if (_family != null)
             {
-                for (int i = 0; i < _family.Count; i++)
-                {
-                    str += _family[i].ToString();
-                }
+                str += _family.ToString();
             }
 
             str += Constants.PersonEnd;
